@@ -1,0 +1,73 @@
+/* Base navbar design */
+.custom-navbar {
+    background-color: #ffffff;
+    padding: 15px 0; /* Larger height */
+    transition: background-color 0.3s ease-in-out;
+    border-bottom: 2px solid #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  /* Hover background effect on full navbar */
+  .custom-navbar:hover {
+    background-color: #f8f9fa;
+  }
+  
+  /* Logo image styling */
+  .logo-zoom {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Nav link items */
+  .nav-item-custom {
+    margin: 0 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* AppForge title styling */
+  .appforge-title {
+    background-color: #0d6efd; /* Bootstrap blue */
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 5px 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effects for desktop only */
+  @media (min-width: 768px) {
+    .nav-item-custom:hover {
+      color: #0d6efd;
+      text-decoration: underline;
+      transform: scale(1.1);
+    }
+  
+    .logo-zoom:hover {
+      transform: scale(1.1);
+    }
+  
+    .appforge-title:hover {
+      background-color: #0056b3;
+    }
+  }
+  
+  /* Disable hover styles on small screens */
+  @media (max-width: 767px) {
+    .nav-item-custom {
+      transform: none !important;
+      text-decoration: none !important;
+    }
+  
+    .appforge-title {
+      font-size: 1rem;
+      padding: 4px 10px;
+    }
+  
+    .logo-zoom {
+      height: 40px;
+    }
+  }
+  
