@@ -1,73 +1,84 @@
 /* Base navbar design */
 .custom-navbar {
-    background-color: #ffffff;
-    padding: 15px 0; /* Larger height */
-    transition: background-color 0.3s ease-in-out;
-    border-bottom: 2px solid #f0f0f0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  background: linear-gradient(90deg, #1a1a1a, #000000); /* Dark gradient */
+  padding: 15px 0;
+  transition: background-color 0.3s ease-in-out;
+  border-bottom: 2px solid #222;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+/* Logo image styling */
+.logo-zoom {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Nav link items */
+.nav-item-custom {
+  margin: 0 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: #ffffff !important; /* White for contrast on dark background */
+}
+
+/* Active nav link styling (optional) */
+.nav-item-custom.active {
+  color: #ffc107 !important; /* Highlight active link with yellow */
+}
+
+/* AppForge title styling */
+.appforge-title {
+  background-color: #222; /* Neutral dark background behind logo text */
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 15px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effects for desktop only */
+@media (min-width: 768px) {
+  .nav-item-custom:hover {
+    color: #ffc107 !important; /* Yellow on hover */
+    text-decoration: underline;
+    transform: scale(1.1);
   }
-  
-  /* Hover background effect on full navbar */
-  .custom-navbar:hover {
-    background-color: #f8f9fa;
+
+  .logo-zoom:hover {
+    transform: scale(1.1);
   }
-  
-  /* Logo image styling */
-  .logo-zoom {
-    transition: transform 0.3s ease-in-out;
+
+  .appforge-title:hover {
+    background-color: #444; /* Slightly lighter on hover */
   }
-  
-  /* Nav link items */
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
   .nav-item-custom {
-    margin: 0 15px;
-    font-weight: 600;
-    font-size: 1rem;
-    position: relative;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transform: none !important;
+    text-decoration: none !important;
   }
-  
-  /* AppForge title styling */
+
   .appforge-title {
-    background-color: #0d6efd; /* Bootstrap blue */
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 5px 15px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    padding: 4px 10px;
   }
-  
-  /* Hover effects for desktop only */
-  @media (min-width: 768px) {
-    .nav-item-custom:hover {
-      color: #0d6efd;
-      text-decoration: underline;
-      transform: scale(1.1);
-    }
-  
-    .logo-zoom:hover {
-      transform: scale(1.1);
-    }
-  
-    .appforge-title:hover {
-      background-color: #0056b3;
-    }
+
+  .logo-zoom {
+    height: 40px;
   }
-  
-  /* Disable hover styles on small screens */
-  @media (max-width: 767px) {
-    .nav-item-custom {
-      transform: none !important;
-      text-decoration: none !important;
-    }
-  
-    .appforge-title {
-      font-size: 1rem;
-      padding: 4px 10px;
-    }
-  
-    .logo-zoom {
-      height: 40px;
-    }
-  }
-  
+}
+
+/* Make the toggle (hamburger and close icon) white */
+.custom-navbar .navbar-toggler {
+  color: #ffffff;
+  border: none;
+}
+
+/* Force the icon bars inside the button to be white */
+.custom-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
